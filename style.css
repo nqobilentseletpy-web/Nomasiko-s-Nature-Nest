@@ -1,0 +1,156 @@
+/* Nomasiko's Nature Nest - earthy boho botanical theme */
+:root{
+  --cream:#f6efe3; --sand:#ecdfc8; --clay:#d9b99b; --terra:#b5653a;
+  --sage:#7d8f69; --olive:#3b4a32; --ink:#2b2a24; --white:#fffdf8;
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost','Segoe UI',Arial,sans-serif;
+  --radius:18px; --shadow:0 10px 30px rgba(59,74,50,.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--terra);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3{font-family:var(--serif);color:var(--olive);line-height:1.15;font-weight:600}
+h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:.6rem}
+h3{font-size:1.5rem;margin-bottom:.4rem}
+p{margin-bottom:1rem}
+.container{width:min(1140px,92%);margin-inline:auto}
+section{padding:4.5rem 0}
+.eyebrow{font-family:var(--sans);letter-spacing:.25em;text-transform:uppercase;font-size:.78rem;color:var(--terra);display:block;margin-bottom:.6rem}
+.center{text-align:center}
+.lead{font-size:1.15rem;max-width:720px}
+.center .lead{margin-inline:auto}
+.divider{display:block;width:90px;height:22px;margin:1rem auto;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 22'%3E%3Cpath d='M0 11h34M56 11h34' stroke='%237d8f69' stroke-width='1.5'/%3E%3Cpath d='M45 2c6 4 6 14 0 18-6-4-6-14 0-18z' fill='%237d8f69'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* Header + nav (CSS-only mobile menu) */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(246,239,227,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--sand)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:.8rem 0}
+.brand{font-family:var(--serif);font-size:1.55rem;font-weight:700;color:var(--olive);display:flex;align-items:center;gap:.5rem}
+.brand:hover{text-decoration:none}
+.brand svg{width:30px;height:30px}
+.menu{display:flex;gap:1.8rem;list-style:none;align-items:center}
+.menu a{color:var(--olive);font-weight:500;letter-spacing:.04em;padding:.3rem 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a.active{border-color:var(--terra);text-decoration:none}
+.menu .btn{color:var(--white);border:0;padding:.65rem 1.4rem}
+.nav-toggle,.nav-burger{display:none}
+
+/* Buttons */
+.btn{display:inline-block;background:var(--terra);color:var(--white);padding:.9rem 2rem;border-radius:999px;font-weight:500;letter-spacing:.05em;border:2px solid var(--terra);cursor:pointer;font-family:var(--sans);font-size:1rem;transition:.25s}
+.btn:hover{background:var(--olive);border-color:var(--olive);text-decoration:none;transform:translateY(-2px)}
+.btn.outline{background:transparent;color:var(--olive);border-color:var(--olive)}
+.btn.outline:hover{background:var(--olive);color:var(--white)}
+
+/* Hero */
+.hero{position:relative;padding:6rem 0 5rem;background:
+  radial-gradient(circle at 85% 20%,rgba(125,143,105,.35),transparent 45%),
+  radial-gradient(circle at 10% 90%,rgba(181,101,58,.25),transparent 45%),var(--sand);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center}
+.hero p.lead{margin:1.2rem 0 2rem}
+.hero .btns{display:flex;gap:1rem;flex-wrap:wrap}
+.slogan{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--terra)}
+.page-hero{padding:4.5rem 0 3.5rem;text-align:center;background:linear-gradient(180deg,var(--sand),var(--cream))}
+
+/* Image frames with botanical fallback */
+.frame{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--sage),var(--clay));aspect-ratio:4/3}
+.frame.tall{aspect-ratio:4/5}
+.frame.arch{border-radius:220px 220px var(--radius) var(--radius);aspect-ratio:3/4}
+.frame img{width:100%;height:100%;object-fit:cover}
+.frame::after{content:"Nomasiko's Nature Nest";position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,253,248,.8);font-family:var(--serif);font-size:1.4rem;z-index:0;text-align:center;padding:1rem}
+.frame img{position:relative;z-index:1}
+
+/* Cards / grids */
+.grid{display:grid;gap:1.8rem}
+.grid.three{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid.two{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card .frame{border-radius:0;box-shadow:none;aspect-ratio:4/3}
+.card-body{padding:1.5rem;display:flex;flex-direction:column;flex:1}
+.card-body p{flex:1}
+.price{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--terra)}
+.price small{font-family:var(--sans);font-size:.8rem;color:var(--sage);font-weight:400;margin-left:.3rem}
+.band{background:var(--olive);color:var(--cream)}
+.band h2,.band h3{color:var(--cream)}
+.band .eyebrow{color:var(--clay)}
+.value{padding:1.6rem;border:1px solid rgba(246,239,227,.3);border-radius:var(--radius)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+
+/* Services list */
+.service-block{margin-bottom:4rem}
+.service-block>h2{border-left:5px solid var(--sage);padding-left:1rem}
+.service-list{list-style:none;margin-top:1.5rem;display:grid;gap:1rem}
+.service-list li{display:grid;grid-template-columns:140px 1fr auto;gap:1.2rem;align-items:center;background:var(--white);padding:1rem;border-radius:var(--radius);box-shadow:var(--shadow)}
+.service-list .frame{aspect-ratio:1/1;border-radius:14px;box-shadow:none}
+.service-list .frame::after{font-size:.7rem}
+.service-list h3{margin:0}
+.service-list p{margin:.2rem 0 0;font-size:.95rem}
+.note{font-size:.9rem;color:var(--sage);font-style:italic}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:start}
+form{background:var(--white);padding:2rem;border-radius:var(--radius);box-shadow:var(--shadow)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:block;font-weight:500;margin:1rem 0 .3rem;color:var(--olive)}
+input,select,textarea{width:100%;padding:.8rem 1rem;border:1.5px solid var(--clay);border-radius:12px;font:inherit;background:var(--cream);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:3px solid rgba(125,143,105,.4);border-color:var(--sage)}
+textarea{min-height:130px;resize:vertical}
+.check{display:flex;gap:.6rem;align-items:flex-start;margin:1.2rem 0}
+.check input{width:auto;margin-top:.35rem}
+.check label{margin:0;font-weight:400;font-size:.92rem}
+fieldset{border:0}
+.info-card{background:var(--white);padding:1.6rem;border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:1.5rem}
+.info-card ul{list-style:none}
+.info-card li{padding:.35rem 0;border-bottom:1px dashed var(--clay)}
+.info-card li:last-child{border:0}
+table{width:100%;border-collapse:collapse}
+td{padding:.5rem 0;border-bottom:1px dashed var(--clay)}
+td:last-child{text-align:right;font-weight:500}
+.locations{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+.loc{background:var(--white);padding:1.5rem;border-radius:var(--radius);box-shadow:var(--shadow);border-top:5px solid var(--sage)}
+.map{margin-top:2rem;min-height:340px;border-radius:var(--radius);border:2px dashed var(--sage);background:repeating-linear-gradient(45deg,var(--sand),var(--sand) 14px,var(--cream) 14px,var(--cream) 28px);display:grid;place-items:center;text-align:center;padding:2rem;color:var(--olive)}
+
+/* Footer + social */
+.site-footer{background:var(--olive);color:var(--cream);padding:3.5rem 0 1.5rem}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+.site-footer h3{color:var(--clay);font-size:1.3rem}
+.site-footer a{color:var(--cream)}
+.site-footer ul{list-style:none}
+.site-footer li{margin-bottom:.4rem}
+.social{display:flex;gap:.8rem;margin-top:1rem;flex-wrap:wrap}
+.social a{width:44px;height:44px;border-radius:50%;background:rgba(246,239,227,.12);display:grid;place-items:center;transition:.25s}
+.social a:hover{background:var(--terra);transform:translateY(-3px)}
+.social svg{width:22px;height:22px;fill:none;stroke:var(--cream);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.social svg .f{fill:var(--cream);stroke:none}
+.copy{text-align:center;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid rgba(246,239,227,.2);font-size:.88rem;opacity:.8}
+.float-wa{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#25a35a;display:grid;place-items:center;box-shadow:var(--shadow);z-index:60}
+.float-wa svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* Tablet */
+@media (max-width:900px){
+  section{padding:3.2rem 0}
+  .hero-grid,.split,.contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero{padding:3.5rem 0}
+  .frame.arch{max-width:340px;margin-inline:auto}
+}
+/* Mobile nav + phones */
+@media (max-width:760px){
+  .nav-burger{display:grid;gap:5px;cursor:pointer;padding:.5rem}
+  .nav-burger span{display:block;width:26px;height:3px;background:var(--olive);border-radius:2px;transition:.25s}
+  .menu{position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;gap:0;padding:0 4%;max-height:0;overflow:hidden;transition:max-height .35s;border-bottom:1px solid var(--sand)}
+  .menu li{width:100%;padding:.7rem 0;border-top:1px solid var(--sand)}
+  .menu .btn{display:block;text-align:center}
+  .nav-toggle:checked ~ .menu{max-height:420px;padding-bottom:1rem}
+  .nav-toggle:checked ~ .nav-burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .nav-toggle:checked ~ .nav-burger span:nth-child(2){opacity:0}
+  .nav-toggle:checked ~ .nav-burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .nav{position:relative}
+  .service-list li{grid-template-columns:90px 1fr}
+  .service-list .price{grid-column:1/-1}
+  .row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  form{padding:1.3rem}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
