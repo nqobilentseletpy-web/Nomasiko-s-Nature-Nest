@@ -1,2 +1,2 @@
 # Nomasiko-s-Nature-Nest
-Calm ,earthy ,nature nest salon
+Calm,Earthy,Nature Nest Salon
